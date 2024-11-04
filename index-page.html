@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human-centered Interaction Research</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .nav {
+            width: 100%;
+            background: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #f0f0f0;
+            color: #007AFF;
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 120px auto 0;
+            padding: 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.2;
+            background: linear-gradient(90deg, #333, #007AFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            padding-left: 1rem;
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .profile-title {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .profile-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #f8f9fa;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .profile-link:hover {
+            background: #007AFF;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .info-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .info-box h3 {
+            color: #007AFF;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .info-list li::before {
+            content: "•";
+            color: #007AFF;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .profile-image {
+                margin: 0 auto;
+                width: 180px;
+                height: 180px;
+            }
+
+            .profile-links {
+                justify-content: center;
+            }
+
+            .info-section {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .page-subtitle {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="research.html">Research</a>
+                <a href="projects.html">Projects</a>
+                <a href="publications.html">Publications</a>
+                <a href="insights.html">Insights</a>
+                <a href="digging.html">Digging</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <h1 class="page-title">Human-centered Interaction</h1>
+        <p class="page-subtitle">
+            현상과 데이터를 중심으로 UX 인사이트를 도출하고 기술과 사람을 잇는 인터랙션을 디자인합니다
+        </p>
+
+        <section class="profile-section">
+            <div class="profile-image">
+                <img src="/api/placeholder/200/200" alt="Profile Photo">
+            </div>
+            <div class="profile-info">
+                <h2 class="profile-name">[Your Name]</h2>
+                <p class="profile-title">HCI Researcher</p>
+                <p class="profile-description">
+                    심리학과 산업공학의 통합적 관점으로 사람에 대한 깊은 이해를 바탕으로 한 
+                    혁신적인 인터랙션을 연구합니다.
+                </p>
+                <div class="profile-links">
+                    <a href="#" class="profile-link">LinkedIn</a>
+                    <a href="mailto:[email]" class="profile-link">Contact</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="info-box">
+                <h3>Research Focus</h3>
+                <ul class="info-list">
+                    <li>Human-Computer Interaction</li>
+                    <li>User Experience Design</li>
+                    <li>User Behavior Analysis</li>
+                    <li>Cognitive Psychology in HCI</li>
+                    <li>Data-Driven UX Research</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Background</h3>
+                <ul class="info-list">
+                    <li>심리학 - 인간의 인지와 감성에 대한 이해</li>
+                    <li>산업공학 - 시스템 설계와 최적화</li>
+                    <li>HCI - 사용자 중심 인터랙션 디자인</li>
+                    <li>UX Research - 사용자 경험 연구 방법론</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        gsap.from(".profile-section", {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            delay: 0.2
+        });
+
+        gsap.from(".info-box", {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            stagger: 0.2,
+            delay: 0.4
+        });
+    </script>
+</body>
+</html>
