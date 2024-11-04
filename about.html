@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Human-centered Interaction Research</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .nav {
+            width: 100%;
+            background: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #f0f0f0;
+            color: #007AFF;
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 120px auto 0;
+            padding: 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .page-subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .about-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .about-section h3 {
+            color: #007AFF;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .education-list {
+            list-style: none;
+        }
+
+        .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-year {
+            color: #007AFF;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-degree {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-details {
+            color: #666;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .skill-category h4 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            color: #666;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: #007AFF;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="research.html">Research</a>
+                <a href="projects.html">Projects</a>
+                <a href="publications.html">Publications</a>
+                <a href="insights.html">Insights</a>
+                <a href="digging.html">Digging</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <header class="page-header">
+            <h1 class="page-title">About Me</h1>
+            <p class="page-subtitle">사람과 기술의 더 나은 상호작용을 연구합니다</p>
+        </header>
+
+        <div class="about-grid">
+            <section class="about-section">
+                <h3>Background</h3>
+                <p class="about-text">
+                    심리학과 산업공학을 전공하며 인간의 인지적, 감성적 측면에 대한 깊은 이해를 쌓았습니다. 
+                    특히 HCI/UX 분야에서 연구를 진행하며, 현상과 데이터를 중심으로 인사이트를 도출하고
+                    기술과 사람을 잇는 인터랙션을 연구하고 있습니다.
+                </p>
+
+                <h3>Education</h3>
+                <ul class="education-list">
+                    <li class="education-item">
+                        <div class="education-year">2022 - 2024</div>
+                        <div class="education-degree">M.S. in Industrial Engineering (HCI/UX)</div>
+                        <div class="education-details">Yonsei University</div>
+                    </li>
+                    <li class="education-item">
+                        <div class="education-year">2018 - 2022</div>
+                        <div class="education-degree">B.A. in Psychology</div>
+                        <div class="education-details">Sungshin Women's University</div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="about-section">
+                <h3>Research Interests</h3>
+                <div class="skill-category">
+                    <ul class="skill-list">
+                        <li>Human-Computer Interaction</li>
+                        <li>User Experience Design</li>
+                        <li>User Behavior Analysis</li>
+                        <li>Cognitive Psychology in HCI</li>
+                        <li>Data-Driven UX Research</li>
+                    </ul>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Research Methods</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>User Research</h4>
+                        <ul class="skill-list">
+                            <li>Usability Testing</li>
+                            <li>User Interview</li>
+                            <li>Contextual Inquiry</li>
+                            <li>Survey Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Analysis</h4>
+                        <ul class="skill-list">
+                            <li>Quantitative Analysis</li>
+                            <li>Qualitative Analysis</li>
+                            <li>Statistical Methods</li>
+                            <li>Behavioral Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Research Tools</h4>
+                        <ul class="skill-list">
+                            <li>R & Python</li>
+                            <li>SPSS</li>
+                            <li>User Testing Tools</li>
+                            <li>Prototyping Tools</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Design</h4>
+                        <ul class="skill-list">
+                            <li>Wireframing</li>
+                            <li>Prototyping</li>
+                            <li>UI/UX Design</li>
+                            <li>Interaction Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        gsap.from(".about-section", {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            stagger: 0.2,
+            delay: 0.2
+        });
+
+        gsap.from(".skill-category", {
+            duration: 1,
+            y: 20,
+            opacity: 0,
+            stagger: 0.1,
+            delay: 0.4
+        });
+    </script>
+</body>
+</html>
