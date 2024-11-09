@@ -109,11 +109,12 @@
 
         .education-list {
             list-style: none;
+            margin-bottom: 2.5rem;
         }
 
         .education-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
+            margin-bottom: 1.5rem; 
+            padding-bottom: 1.5rem;
             border-bottom: 1px solid #eee;
         }
 
@@ -137,6 +138,22 @@
         .education-details {
             color: #666;
         }
+        .about-section h3 {
+            color: #007AFF;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 2.5rem;  
+}
+
+.about-section h3:first-child {
+    margin-top: 0;  /* 첫 번째 제목은 상단 여백 제거 */
+}
+
+.about-text {
+    color: #666;
+    margin-bottom: 2.5rem;  /* Background 텍스트 아래 여백 조정 */
+    line-height: 1.8;
+}
 
         .skills-grid {
             display: grid;
@@ -187,12 +204,12 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+            
         }
     </style>
 </head>
 <!DOCTYPE html>
 <html lang="ko">
-[이전 head 부분은 동일...]
 
 <body>
     <nav class="nav">
@@ -225,7 +242,7 @@
                     특히 HCI/UX 분야에서 연구를 진행하며, 현상과 데이터를 중심으로 인사이트를 도출하고
                     기술과 사람을 잇는 인터랙션을 연구하고 있습니다.
                 </p>
-
+            
                 <h3>Work Experience</h3>
                 <ul class="education-list">
                     <li class="education-item">
@@ -243,7 +260,7 @@
                         <div class="education-details">KIST(Korea Institute of Science and Technology)</div>
                     </li>
                 </ul>
-
+            
                 <h3>Education</h3>
                 <ul class="education-list">
                     <li class="education-item">
@@ -260,7 +277,6 @@
                     </li>
                 </ul>
             </section>
-
             <section class="about-section">
                 <h3>Research Interests</h3>
                 <div class="skill-category">
