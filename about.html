@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Human-centered Interaction Research</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Pretendard', sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            overflow-x: hidden;
         }
 
         .nav {
             width: 100%;
             background: white;
             padding: 1.5rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
             z-index: 1000;
@@ -71,32 +70,31 @@
         .page-title {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: #000000;
         }
 
         .page-subtitle {
             color: #666;
             font-size: 1.2rem;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 3rem;
             margin-bottom: 4rem;
         }
 
         .about-section {
-            background: white;
+            background: #f8f9fa;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 4px;
         }
 
         .about-section h3 {
-            color: #007AFF;
+            color: #000000;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             margin-top: 2.5rem;
@@ -107,7 +105,7 @@
         }
 
         .about-text {
-            color: #666;
+            color: #333;
             margin-bottom: 2.5rem;
             line-height: 1.8;
         }
@@ -130,7 +128,7 @@
         }
 
         .education-year {
-            color: #007AFF;
+            color: #666;
             font-weight: 500;
             margin-bottom: 0.5rem;
         }
@@ -144,40 +142,27 @@
             color: #666;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
         .skill-category {
-            background: #f8f9fa;
+            background: #ffffff;
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
         }
 
         .skill-category h4 {
-            color: #333;
+            color: #000000;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .skill-list {
             list-style: none;
+            padding-left: 1rem;
         }
 
         .skill-list li {
-            color: #666;
+            color: #444;
             margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-list li::before {
-            content: "•";
-            color: #007AFF;
         }
 
         @media (max-width: 1024px) {
@@ -332,16 +317,14 @@
     <main class="main-container">
         <header class="page-header">
             <h1 class="page-title">About Me</h1>
-            <p class="page-subtitle">사람을 중심으로 사람과 기술의 더 나은 상호작용을 연구하고 있습니다.</p>
+            <p class="page-subtitle">Research bridging human and technology</p>
         </header>
 
         <div class="about-grid">
             <section class="about-section">
                 <h3>Background</h3>
                 <p class="about-text">
-                    심리학과 산업공학을 전공하며 인간의 인지적, 감성적 측면에 대한 깊은 이해를 쌓았습니다. 
-                    특히 HCI/UX 분야에서 연구를 진행하며, 현상과 데이터를 중심으로 인사이트를 도출하고
-                    기술과 사람을 잇는 인터랙션을 연구하고 있습니다.
+                    With a foundation in psychology and industrial engineering, I have a deep understanding of the cognitive and emotional aspects of human behavior. My research focuses on HCI/UX, deriving insights from behavioral phenomena and data to study the interactions between people and technology
                 </p>
 
                 <h3>Work Experience</h3>
@@ -391,50 +374,28 @@
                     </ul>
                 </div>
 
-                <h3 style="margin-top: 2rem;">Research Methods</h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>User Research</h4>
-                        <ul class="skill-list">
-                            <li>Usability Testing</li>
-                            <li>User Interview</li>
-                            <li>Survey Design</li>
-                        </ul>
-                    </div>
+                <h3>Research Methods</h3>
+                <div class="skill-category">
+                    <h4>User Research</h4>
+                    <ul class="skill-list">
+                        <li>Usability Testing</li>
+                        <li>User Interview</li>
+                        <li>Survey Design</li>
+                    </ul>
                 </div>
 
-                <h3 style="margin-top: 2rem;">Skills</h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Research Tools</h4>
-                        <ul class="skill-list">
-                            <li>R & Python</li>
-                            <li>SPSS</li>
-                            <li>Figma & Protopie</li>
-                            <li>HTML</li>
-                        </ul>
-                    </div>
+                <h3>Skills</h3>
+                <div class="skill-category">
+                    <h4>Research Tools</h4>
+                    <ul class="skill-list">
+                        <li>R & Python</li>
+                        <li>SPSS</li>
+                        <li>Figma & Protopie</li>
+                        <li>HTML</li>
+                    </ul>
                 </div>
             </section>
         </div>
     </main>
-
-    <script>
-        gsap.from(".about-section", {
-            duration: 1,
-            y: 30,
-            opacity: 0,
-            stagger: 0.2,
-            delay: 0.2
-        });
-
-        gsap.from(".skill-category", {
-            duration: 1,
-            y: 20,
-            opacity: 0,
-            stagger: 0.1,
-            delay: 0.4
-        });
-    </script>
 </body>
 </html>
