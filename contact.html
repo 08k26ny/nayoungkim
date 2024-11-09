@@ -11,13 +11,13 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Pretendard', sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            overflow-x: hidden;
         }
 
         .nav {
@@ -34,14 +34,30 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000000;
+            margin-right: 2rem;
+            flex-shrink: 0;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
         }
 
         .nav-links a {
@@ -51,6 +67,7 @@
             padding: 0.5rem 1rem;
             border-radius: 6px;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -58,41 +75,53 @@
             color: #007AFF;
         }
 
-        .main-container {
-            max-width: 1000px;
-            margin: 120px auto 0;
-            padding: 2rem;
+        .cta-button {
+            background: #000000;
+            color: #ffffff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+            flex-shrink: 0;
         }
 
-        .page-header {
-            text-align: center;
-            margin-bottom: 4rem;
+        .hero {
+            min-height: 100vh;
+            padding: 6rem 2rem 2rem;
+            margin-top: 4rem;
         }
 
-        .page-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
+        .hero-content {
+            max-width: 800px;
+            padding-top: 2rem;
         }
 
-        .page-subtitle {
+        .hero-title {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.6;
             color: #666;
-            font-size: 1.2rem;
+            margin-bottom: 3rem;
             max-width: 600px;
-            margin: 0 auto;
         }
 
         .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
+            margin-top: 4rem;
         }
 
         .contact-section {
             background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .contact-info {
@@ -101,10 +130,10 @@
         }
 
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1rem;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
@@ -116,9 +145,8 @@
         }
 
         .contact-name {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 0.5rem;
-            color: #333;
         }
 
         .contact-title {
@@ -127,10 +155,10 @@
         }
 
         .contact-description {
-            color: #666;
+            color: #444;
             max-width: 600px;
             margin: 0 auto 2rem;
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
         .social-links {
@@ -144,9 +172,9 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: #f8f9fa;
-            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            background: #f0f0f0;
+            border-radius: 100px;
             text-decoration: none;
             color: #333;
             font-weight: 500;
@@ -160,15 +188,8 @@
         }
 
         .social-link i {
-            width: 20px;
-            height: 20px;
-        }
-
-        .contact-divider {
-            width: 100%;
-            height: 1px;
-            background: #eee;
-            margin: 3rem 0;
+            width: 18px;
+            height: 18px;
         }
 
         .contact-methods {
@@ -180,8 +201,9 @@
 
         .contact-method {
             padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 12px;
+            background: #f8f8f8;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             transition: transform 0.3s;
         }
 
@@ -199,7 +221,7 @@
         }
 
         .contact-method p {
-            color: #666;
+            color: #444;
             margin-bottom: 1rem;
         }
 
@@ -213,13 +235,67 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
-            .contact-section {
-                padding: 2rem;
+        @media (min-width: 768px) {
+            .hero {
+                padding: 8rem 4rem 4rem;
             }
 
-            .social-links {
-                flex-wrap: wrap;
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 4rem;
+            }
+
+            .contact-grid {
+                margin-top: 6rem;
+            }
+
+            .contact-section {
+                padding: 3rem;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .contact-name {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 0.5rem;
+            }
+
+            .nav-links a {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.85rem;
+            }
+
+            .cta-button {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.75rem;
             }
         }
     </style>
@@ -227,6 +303,7 @@
 <body>
     <nav class="nav">
         <div class="nav-content">
+            <a href="index.html" class="logo">0</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -269,8 +346,6 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="contact-divider"></div>
 
                 <div class="contact-methods">
                     <div class="contact-method">
