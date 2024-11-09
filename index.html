@@ -34,8 +34,22 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #000000;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #007AFF;
         }
 
         .nav-links {
@@ -224,6 +238,10 @@
                 padding: 1.5rem 2rem;
             }
 
+            .logo {
+                font-size: 1rem;
+            }
+
             .main-title {
                 font-size: 2.5rem;
             }
@@ -291,6 +309,7 @@
 <body>
     <nav class="nav">
         <div class="nav-content">
+            <a href="index.html" class="logo">Young</a>
             <div class="nav-links">
                 <a href="about.html">About</a>
                 <a href="research.html">Research</a>
