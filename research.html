@@ -6,19 +6,8 @@
     <title>Research - Human-centered Interaction Research</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
-            overflow-x: hidden;
-        }
-
+        /* Existing CSS styles */
+        
         .nav {
             width: 100%;
             background: white;
@@ -33,9 +22,17 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000000;
+            margin-right: 2rem;
+            flex-shrink: 0;
         }
 
         .nav-links {
@@ -66,25 +63,8 @@
             color: #007AFF;
         }
 
-        .main-container {
-            max-width: 1000px;
-            margin: 120px auto 0;
-            padding: 2rem;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .page-title {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
         .page-subtitle {
+            text-align: center;
             font-size: 1.1rem;
             line-height: 1.6;
             color: #666;
@@ -105,6 +85,8 @@
             padding: 0.5rem 1.5rem;
             border-radius: 6px;
             transition: all 0.3s ease;
+            background-color: #f0f0f0;
+            margin: 0 0.5rem;
         }
 
         .research-tabs a.active {
@@ -122,6 +104,7 @@
             padding: 1.5rem;
             background: #f8f8f8;
             border-radius: 4px;
+            position: relative;
         }
 
         .research-date {
@@ -140,6 +123,17 @@
             font-size: 1rem;
             color: #444;
             line-height: 1.5;
+        }
+
+        .research-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: #007AFF;
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
         }
 
         @media (min-width: 768px) {
@@ -179,6 +173,7 @@
             .research-tabs a {
                 padding: 0.4rem 1rem;
                 font-size: 0.9rem;
+                margin: 0 0.25rem;
             }
         }
         
@@ -195,6 +190,7 @@
             .research-tabs a {
                 padding: 0.3rem 0.8rem;
                 font-size: 0.8rem;
+                margin: 0 0.25rem;
             }
         }
     </style>
@@ -202,6 +198,7 @@
 <body>
     <nav class="nav">
         <div class="nav-content">
+            <a href="index.html" class="logo">0</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -232,11 +229,13 @@
                     <div class="research-date">October, 2024</div>
                     <h3 class="research-headline">New Research Paper Published in IROS 2024</h3>
                     <p class="research-description">Our latest research on delivery robot and InCoPs interaction has been accepted for publication at the HRI 2024 conference.</p>
+                    <div class="research-status">Published</div>
                 </article>
                 <article class="research-item">
                     <div class="research-date">September, 2024</div>
                     <h3 class="research-headline">Join AI Robotics Lab in Sogang University as HRI Researcher</h3>
                     <p class="research-description">I'm joining the AI Robotics Lab to design interfaces and share insights into human-robot interaction.</p>
+                    <div class="research-status">In Progress</div>
                 </article>
             </div>
         </section>
@@ -247,36 +246,43 @@
                     <div class="research-date">July, 2024</div>
                     <h3 class="research-headline">Publication in CHI 2024 Conference</h3>
                     <p class="research-description">Our paper on cognitive load in VR interactions has been accepted for publication at the CHI 2024 conference.</p>
+                    <div class="research-status">Published</div>
                 </article>
                 <article class="research-item">
                     <div class="research-date">June, 2024</div>
                     <h3 class="research-headline">Presented at HCII 2024 Conference</h3>
                     <p class="research-description">I presented our latest research on data-driven UX design at the HCII 2024 conference.</p>
+                    <div class="research-status">Presented</div>
                 </article>
                 <article class="research-item">
                     <div class="research-date">May, 2024</div>
                     <h3 class="research-headline">Conducted User Studies for Autonomous Vehicle UX</h3>
                     <p class="research-description">We conducted a series of user studies to understand the user experience of autonomous vehicles.</p>
+                    <div class="research-status">Completed</div>
                 </article>
                 <article class="research-item">
                     <div class="research-date">April, 2024</div>
                     <h3 class="research-headline">Published Research on HRI in Manufacturing</h3>
                     <p class="research-description">Our research on human-robot interaction in manufacturing environments has been published in a journal.</p>
+                    <div class="research-status">Published</div>
                 </article>
                 <article class="research-item">
                     <div class="research-date">March, 2024</div>
                     <h3 class="research-headline">Presented Cognitive Psychology Research at APA</h3>
                     <p class="research-description">I presented our findings on the impact of cognitive biases on user interaction at the APA conference.</p>
+                    <div class="research-status">Presented</div>
                 </article>
                 <article class="research-item">
                     <div class="research-date">February, 2024</div>
                     <h3 class="research-headline">Awarded Grant for UX Research Project</h3>
                     <p class="research-description">We received a research grant to study the impact of personalization on user experience.</p>
+                    <div class="research-status">Awarded</div>
                 </article>
                 <article class="research-item">
                     <div class="research-date">January, 2024</div>
                     <h3 class="research-headline">Joined KIST as HRI Researcher</h3>
                     <p class="research-description">I joined the AI Robot Center at KIST to focus on human-robot interaction research.</p>
+                    <div class="research-status">Joined</div>
                 </article>
             </div>
         </section>
