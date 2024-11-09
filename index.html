@@ -32,9 +32,16 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000000;
+            margin-right: auto;
         }
 
         .nav-links {
@@ -64,7 +71,7 @@
             text-decoration: none;
             text-transform: uppercase;
             font-size: 0.9rem;
-            margin-left: auto;
+            margin-left: 1rem;
         }
 
         .hero {
@@ -175,18 +182,36 @@
             .news-item {
                 padding: 2rem;
             }
-            
-            .nav-links {
-                gap: 3rem;
-                margin: 0 auto;
-            }
-            
-            .cta-button {
-                margin-left: 0;
-            }
         }
         
         @media (max-width: 768px) {
+            .nav-content {
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+
+            .nav-content::-webkit-scrollbar {
+                display: none;
+            }
+
+            .nav-links {
+                flex-wrap: nowrap;
+                gap: 1.5rem;
+                margin-left: 1rem;
+            }
+
+            .nav-links a {
+                white-space: nowrap;
+            }
+
+            .cta-button {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
             .nav-links {
                 gap: 1rem;
             }
@@ -222,6 +247,7 @@
 <body>
     <nav class="nav">
         <div class="nav-content">
+            <a href="index.html" class="logo">0</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
