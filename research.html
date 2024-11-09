@@ -152,12 +152,21 @@
         }
 
         .research-item-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-top: 1rem;
             font-size: 0.9rem;
-            color: #666;
+            color: #000000;
+        }
+
+        .research-role,
+        .research-organization {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            color: #000000;
         }
 
         .research-status {
@@ -167,7 +176,7 @@
             padding: 0.25rem 0.75rem;
             border-radius: 4px;
             font-size: 0.8rem;
-            background-color: #007AFF;
+            background-color: #4CAF50;
             color: #fff;
         }
 
@@ -265,8 +274,8 @@
                     <h3 class="research-headline">New Research Paper Published in IROS 2024</h3>
                     <p class="research-description">Our latest research on delivery robot and InCoPs interaction has been accepted for publication at the HRI 2024 conference.</p>
                     <div class="research-item-details">
-                        <div>Role: Lead Researcher</div>
-                        <div>Organization: HRI Lab, Sogang University</div>
+                        <div class="research-role">Lead Researcher</div>
+                        <div class="research-organization">HRI Lab, Sogang University</div>
                     </div>
                     <div class="research-status">Published</div>
                 </article>
@@ -275,8 +284,8 @@
                     <h3 class="research-headline">Join AI Robotics Lab in Sogang University as HRI Researcher</h3>
                     <p class="research-description">I'm joining the AI Robotics Lab to design interfaces and share insights into human-robot interaction.</p>
                     <div class="research-item-details">
-                        <div>Role: HRI Researcher</div>
-                        <div>Organization: AI Robotics Lab, Sogang University</div>
+                        <div class="research-role">HRI Researcher</div>
+                        <div class="research-organization">AI Robotics Lab, Sogang University</div>
                     </div>
                     <div class="research-status">In Progress</div>
                 </article>
@@ -290,8 +299,8 @@
                     <h3 class="research-headline">Publication in CHI 2024 Conference</h3>
                     <p class="research-description">Our paper on cognitive load in VR interactions has been accepted for publication at the CHI 2024 conference.</p>
                     <div class="research-item-details">
-                        <div>Role: Lead Researcher</div>
-                        <div>Organization: HCI Lab, Yonsei University</div>
+                        <div class="research-role">Lead Researcher</div>
+                        <div class="research-organization">HCI Lab, Yonsei University</div>
                     </div>
                     <div class="research-status">Published</div>
                 </article>
@@ -300,8 +309,8 @@
                     <h3 class="research-headline">Presented at HCII 2024 Conference</h3>
                     <p class="research-description">I presented our latest research on data-driven UX design at the HCII 2024 conference.</p>
                     <div class="research-item-details">
-                        <div>Role: Presenter</div>
-                        <div>Organization: HCI Lab, Yonsei University</div>
+                        <div class="research-role">Presenter</div>
+                        <div class="research-organization">HCI Lab, Yonsei University</div>
                     </div>
                     <div class="research-status">Presented</div>
                 </article>
@@ -310,8 +319,8 @@
                     <h3 class="research-headline">Conducted User Studies for Autonomous Vehicle UX</h3>
                     <p class="research-description">We conducted a series of user studies to understand the user experience of autonomous vehicles.</p>
                     <div class="research-item-details">
-                        <div>Role: Lead Researcher</div>
-                        <div>Organization: UX Research Lab, Yonsei University</div>
+                        <div class="research-role">Lead Researcher</div>
+                        <div class="research-organization">UX Research Lab, Yonsei University</div>
                     </div>
                     <div class="research-status">Completed</div>
                 </article>
@@ -320,8 +329,8 @@
                     <h3 class="research-headline">Published Research on HRI in Manufacturing</h3>
                     <p class="research-description">Our research on human-robot interaction in manufacturing environments has been published in a journal.</p>
                     <div class="research-item-details">
-                        <div>Role: Co-Researcher</div>
-                        <div>Organization: HRI Lab, KIST</div>
+                        <div class="research-role">Co-Researcher</div>
+                        <div class="research-organization">HRI Lab, KIST</div>
                     </div>
                     <div class="research-status">Published</div>
                 </article>
@@ -330,8 +339,8 @@
                     <h3 class="research-headline">Presented Cognitive Psychology Research at APA</h3>
                     <p class="research-description">I presented our findings on the impact of cognitive biases on user interaction at the APA conference.</p>
                     <div class="research-item-details">
-                        <div>Role: Lead Presenter</div>
-                        <div>Organization: Cognitive Psychology Lab, Sungshin University</div>
+                        <div class="research-role">Lead Presenter</div>
+                        <div class="research-organization">Cognitive Psychology Lab, Sungshin University</div>
                     </div>
                     <div class="research-status">Presented</div>
                 </article>
@@ -340,8 +349,8 @@
                     <h3 class="research-headline">Awarded Grant for UX Research Project</h3>
                     <p class="research-description">We received a research grant to study the impact of personalization on user experience.</p>
                     <div class="research-item-details">
-                        <div>Role: Principal Investigator</div>
-                        <div>Organization: UX Research Lab, Yonsei University</div>
+                        <div class="research-role">Principal Investigator</div>
+                        <div class="research-organization">UX Research Lab, Yonsei University</div>
                     </div>
                     <div class="research-status">Awarded</div>
                 </article>
@@ -350,8 +359,8 @@
                     <h3 class="research-headline">Joined KIST as HRI Researcher</h3>
                     <p class="research-description">I joined the AI Robot Center at KIST to focus on human-robot interaction research.</p>
                     <div class="research-item-details">
-                        <div>Role: HRI Researcher</div>
-                        <div>Organization: AI Robot Center, KIST</div>
+                        <div class="research-role">HRI Researcher</div>
+                        <div class="research-organization">AI Robot Center, KIST</div>
                     </div>
                     <div class="research-status">Joined</div>
                 </article>
@@ -387,5 +396,3 @@
             currentSection.style.display = 'none';
         });
     </script>
-</body>
-</html>
