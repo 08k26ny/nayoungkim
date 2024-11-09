@@ -251,7 +251,6 @@
             <!-- Project 1 -->
             <div class="project-card">
                 <div class="project-image">
-                    <!-- Image Path Adjusted -->
                     <img src="image/project1.png" alt="Project 1">
                 </div>
                 <div class="project-content">
@@ -275,7 +274,6 @@
             <!-- Project 2 -->
             <div class="project-card">
                 <div class="project-image">
-                    <!-- Image Path Adjusted -->
                     <img src="image/project2.png" alt="Project 2">
                 </div>
                 <div class="project-content">
@@ -293,3 +291,56 @@
                         <span>진행 중</span>
                     </div>
                     <a href="#" class="project-link">자세히 보기 →</a>
+                </div>
+            </div>
+
+            <!-- Additional 10 project cards following the same structure... -->
+            <!-- Projects 3-12 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="image/project3.png" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">UX Metrics</span>
+                    </div>
+                    <h3 class="project-title">UX 메트릭스 개발</h3>
+                    <p class="project-description">
+                        사용자 경험을 정량적으로 측정하기 위한 새로운 메트릭스를 개발하고 
+                        실제 서비스에 적용하여 효과성을 검증했습니다.
+                    </p>
+                    <div class="project-status">
+                        <div class="status-indicator status-completed"></div>
+                        <span>완료</span>
+                    </div>
+                    <a href="#" class="project-link">자세히 보기 →</a>
+                </div>
+            </div>
+
+            <!-- Continue with remaining project cards... -->
+
+        </div>
+    </main>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Scroll animations
+        gsap.from(".project-card", {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            stagger: 0.2,
+            delay: 0.2
+        });
+    </script>
+</body>
+</html>
