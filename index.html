@@ -68,9 +68,7 @@
             margin-bottom: 2rem;
             text-align: center;
             line-height: 1.2;
-            background: linear-gradient(90deg, #333, #007AFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #333;
             font-weight: 700;
         }
 
@@ -197,13 +195,28 @@
             left: 0;
         }
 
+        @media (max-width: 1024px) {
+            .main-container {
+                padding: 2rem;
+                margin-top: 100px;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .info-section {
+                gap: 1.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .main-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .main-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
                 padding: 0 1rem;
             }
 
@@ -211,28 +224,58 @@
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 1.5rem;
+                padding: 1.5rem;
             }
 
             .profile-image {
                 margin: 0 auto;
-                width: 180px;
-                height: 180px;
+                width: 160px;
+                height: 160px;
             }
 
             .profile-links {
                 justify-content: center;
+                flex-wrap: wrap;
             }
 
             .info-section {
                 grid-template-columns: 1fr;
             }
 
+            .info-box {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 1.8rem;
+            }
+
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .profile-name {
+                font-size: 1.5rem;
+            }
+
+            .profile-title {
+                font-size: 1rem;
+            }
+
             .nav-links {
-                gap: 1rem;
+                gap: 0.5rem;
             }
 
             .nav-links a {
-                padding: 0.5rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .profile-link {
+                padding: 0.6rem 1.2rem;
                 font-size: 0.9rem;
             }
         }
@@ -256,7 +299,7 @@
     <main class="main-container">
         <h1 class="main-title">Human-Computer Interaction</h1>
         <p class="main-subtitle">
-            현상과 데이터를 중심으로 UX 인사이트를 도출하고<br> 
+            현상과 데이터를 중심으로 UX 인사이트를 도출하고
             기술과 사람을 잇는 인터랙션을 디자인합니다
         </p>
 
@@ -268,7 +311,7 @@
                 <h2 class="profile-name">Nayoung Kim</h2>
                 <p class="profile-title">HCI Researcher</p>
                 <p class="profile-description">
-                    심리학과 산업공학의 통합적 관점으로 사람에 대한 깊은 이해를 바탕으로 한<br> 
+                    심리학과 산업공학의 통합적 관점으로 사람에 대한 깊은 이해를 바탕으로 한
                     혁신적인 인터랙션을 연구합니다.
                 </p>
                 <div class="profile-links">
@@ -300,7 +343,6 @@
     </main>
 
     <script>
-        // Scroll animations
         gsap.from(".profile-section", {
             duration: 1,
             y: 30,
