@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Human-centered Interaction Research</title>
+    <title>About - Young's</title>
     <style>
         * {
             margin: 0;
@@ -73,18 +73,6 @@
             color: #007AFF;
         }
 
-        .cta-button {
-            background: #000000;
-            color: #ffffff;
-            padding: 0.5rem 1.5rem;
-            border-radius: 100px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-left: 1rem;
-            flex-shrink: 0;
-        }
-
         .main-container {
             max-width: 1000px;
             margin: 120px auto 0;
@@ -119,18 +107,14 @@
         .about-section {
             background: #f8f9fa;
             padding: 2rem;
-            border-radius: 4px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         .about-section h3 {
             color: #000000;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            margin-top: 2.5rem;
-        }
-
-        .about-section h3:first-child {
-            margin-top: 0;
         }
 
         .about-text {
@@ -171,17 +155,23 @@
             color: #666;
         }
 
-        .skill-category {
-            background: #ffffff;
-            padding: 1.5rem;
-            border-radius: 4px;
-            margin-bottom: 1.5rem;
+        .interests-skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .skill-category h4 {
+        .interest-skills-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .interest-skills-section h3 {
             color: #000000;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
         }
 
         .skill-list {
@@ -192,6 +182,14 @@
         .skill-list li {
             color: #444;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li:before {
+            content: "•";
+            color: #007AFF;
         }
 
         @media (max-width: 1024px) {
@@ -230,7 +228,6 @@
 
             .about-section h3 {
                 font-size: 1.3rem;
-                margin-top: 2rem;
             }
 
             .education-item {
@@ -246,22 +243,17 @@
                 font-size: 0.9rem;
             }
 
-            .skills-grid {
+            .interests-skills-container {
                 grid-template-columns: 1fr;
-                gap: 1rem;
             }
 
-            .skill-category {
-                padding: 1.2rem;
+            .interest-skills-section {
+                padding: 1.5rem;
             }
 
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-links a {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.9rem;
+            .interest-skills-section h3 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
             }
         }
 
@@ -288,7 +280,6 @@
 
             .about-section h3 {
                 font-size: 1.2rem;
-                margin-top: 1.8rem;
             }
 
             .about-text {
@@ -308,21 +299,12 @@
                 font-size: 0.85rem;
             }
 
-            .skill-category h4 {
-                font-size: 1rem;
+            .interest-skills-section h3 {
+                font-size: 1.1rem;
             }
 
             .skill-list li {
                 font-size: 0.9rem;
-            }
-
-            .nav-links {
-                gap: 0.5rem;
-            }
-
-            .nav-links a {
-                padding: 0.3rem 0.6rem;
-                font-size: 0.85rem;
             }
         }
     </style>
@@ -398,38 +380,36 @@
                 </ul>
             </section>
 
-            <section class="about-section">
-                <h3>Research Interests</h3>
-                <div class="skill-category">
+            <div class="interests-skills-container">
+                <section class="interest-skills-section">
+                    <h3>Research Interests</h3>
                     <ul class="skill-list">
                         <li>Human-Robot Interaction</li>
                         <li>UX Design for Autonomous Vehicles</li>
                         <li>Cognitive Psychology in HCI</li>
                         <li>Data-Driven UX Research</li>
                     </ul>
-                </div>
+                </section>
 
-                <h3>Research Methods</h3>
-                <div class="skill-category">
-                    <h4>User Research</h4>
+                <section class="interest-skills-section">
+                    <h3>Research Methods</h3>
                     <ul class="skill-list">
                         <li>Usability Testing</li>
                         <li>User Interview</li>
                         <li>Survey Design</li>
                     </ul>
-                </div>
+                </section>
 
-                <h3>Skills</h3>
-                <div class="skill-category">
-                    <h4>Research Tools</h4>
+                <section class="interest-skills-section">
+                    <h3>Skills</h3>
                     <ul class="skill-list">
                         <li>R & Python</li>
                         <li>SPSS</li>
                         <li>Figma & Protopie</li>
                         <li>HTML</li>
                     </ul>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </main>
 </body>
