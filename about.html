@@ -32,14 +32,30 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000000;
+            margin-right: 2rem;
+            flex-shrink: 0;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
         }
 
         .nav-links a {
@@ -49,6 +65,7 @@
             padding: 0.5rem 1rem;
             border-radius: 6px;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -301,6 +318,7 @@
 <body>
     <nav class="nav">
         <div class="nav-content">
+            <a href="index.html" class="logo">0</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -316,13 +334,13 @@
 
     <main class="main-container">
         <header class="page-header">
-            <h1 class="page-title">About Me</h1>
-            <p class="page-subtitle">Research bridging human and technology</p>
+            <h1 class="page-title">Nayoung Kim</h1>
+            <p class="page-subtitle">Bridging human and technology</p>
         </header>
 
         <div class="about-grid">
             <section class="about-section">
-                <h3>Background</h3>
+                <h3>About Me</h3>
                 <p class="about-text">
                     With a foundation in psychology and industrial engineering, I have a deep understanding of the cognitive and emotional aspects of human behavior. My research focuses on HCI/UX, deriving insights from behavioral phenomena and data to study the interactions between people and technology
                 </p>
@@ -352,12 +370,18 @@
                         <div class="education-degree">M.S. in Industrial Engineering (HCI/UX)
                             <div>HFIDL(Human Factors & Interaction Design Lab)</div>
                         </div>
-                        <div class="education-details">Yonsei University</div>
+                        <div class="education-details">
+                            Yonsei University
+                            <div>GPA: <input type="text" placeholder="Enter GPA" /></div>
+                        </div>
                     </li>
                     <li class="education-item">
                         <div class="education-year">2017 - 2021</div>
                         <div class="education-degree">B.A. in Psychology</div>
-                        <div class="education-details">Sungshin Women's University</div>
+                        <div class="education-details">
+                            Sungshin Women's University
+                            <div>GPA: <input type="text" placeholder="Enter GPA" /></div>
+                        </div>
                     </li>
                 </ul>
             </section>
