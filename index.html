@@ -18,39 +18,42 @@
             overflow-x: hidden;
         }
 
-        .header {
-            position: fixed;
-            width: 100%;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #ffffff;
-            z-index: 1000;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: #000000;
-            margin-right: 1rem;
-        }
-
         .nav {
-            display: flex;
-            gap: 1.5rem;
-            margin: 0;
+            width: 100%;
+            background: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
 
-        .nav a {
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            color: #000000;
-            font-size: 1rem;
-            text-transform: uppercase;
-            font-weight: 300;
-            letter-spacing: 0.5px;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #f0f0f0;
+            color: #007AFF;
         }
 
         .cta-button {
@@ -61,12 +64,13 @@
             text-decoration: none;
             text-transform: uppercase;
             font-size: 0.9rem;
-            margin-left: 1rem;
+            margin-left: auto;
         }
 
         .hero {
             min-height: 100vh;
             padding: 6rem 2rem 2rem;
+            margin-top: 4rem;
         }
 
         .hero-content {
@@ -146,16 +150,6 @@
         }
 
         @media (min-width: 768px) {
-            .header {
-                padding: 1.5rem 4rem;
-                flex-wrap: nowrap;
-            }
-            
-            .nav {
-                gap: 3rem;
-                margin: 0 auto;
-            }
-            
             .hero {
                 padding: 8rem 4rem 4rem;
             }
@@ -181,19 +175,65 @@
             .news-item {
                 padding: 2rem;
             }
+            
+            .nav-links {
+                gap: 3rem;
+                margin: 0 auto;
+            }
+            
+            .cta-button {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .cta-button {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-links a {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.85rem;
+            }
+            
+            .cta-button {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo">0</a>
-        <nav class="nav">
-            <a href="#about">About</a>
-            <a href="#design">Design</a>
-            <a href="#research">Research</a>
-        </nav>
-        <a href="https://www.linkedin.com/in/08na26youngkim/" target="_blank" class="cta-button">Contact</a>
-    </header>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="research.html">Research</a>
+                <a href="projects.html">Projects</a>
+                <a href="publications.html">Publications</a>
+                <a href="insights.html">Insights</a>
+                <a href="digging.html">Digging</a>
+            </div>
+            <a href="https://www.linkedin.com/in/08na26youngkim/" target="_blank" class="cta-button">Contact</a>
+        </div>
+    </nav>
 
     <main>
         <section class="hero">
