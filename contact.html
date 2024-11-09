@@ -188,51 +188,8 @@
         }
 
         .social-link i {
-            width: 18px;
-            height: 18px;
-        }
-
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .contact-method {
-            padding: 1.5rem;
-            background: #f8f8f8;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .contact-method:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-method h3 {
-            color: #333;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .contact-method p {
-            color: #444;
-            margin-bottom: 1rem;
-        }
-
-        .contact-method-link {
-            color: #007AFF;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-method-link:hover {
-            text-decoration: underline;
+            width: 20px;
+            height: 20px;
         }
 
         @media (min-width: 768px) {
@@ -332,7 +289,7 @@
                     <h2 class="contact-name">Nayoung Kim</h2>
                     <p class="contact-title">HCI Researcher</p>
                     <p class="contact-description">
-                        I’m always excited to chat about HCI, UX research and design<br>
+                        I'm always excited to chat about HCI, UX research and design<br>
                         Feel free to reach out about collaboration ideas or potential projects!
                     </p>
                     <div class="social-links">
@@ -344,27 +301,6 @@
                             <i data-lucide="mail"></i>
                             Email
                         </a>
-                    </div>
-                </div>
-
-                <div class="contact-methods">
-                    <div class="contact-method">
-                        <h3>
-                            <i data-lucide="mail"></i>
-                            Email
-                        </h3>
-                        <p>Please contact me by email,<br>
-                            and I’ll get back to you as soon as possible</p>
-                        <a href="mailto:nayoungkim0826@gmail.com" class="contact-method-link">nayoungkim0826@gmail.com</a>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>
-                            <i data-lucide="linkedin"></i>
-                            LinkedIn
-                        </h3>
-                        <p>Let’s connect on LinkedIn!</p>
-                        <a href="#" class="contact-method-link" target="_blank">LinkedIn Profile</a>
                     </div>
                 </div>
             </section>
@@ -381,14 +317,6 @@
             y: 30,
             opacity: 0,
             delay: 0.2
-        });
-
-        gsap.from(".contact-method", {
-            duration: 1,
-            y: 20,
-            opacity: 0,
-            stagger: 0.2,
-            delay: 0.4
         });
     </script>
 </body>
