@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAYOUNG PORTFOLIO</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>HRI Research Lab</title>
     <style>
         * {
             margin: 0;
@@ -16,373 +15,214 @@
             font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
             background-color: #ffffff;
             color: #000000;
-            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        .nav {
-            width: 100%;
-            background: white;
-            padding: 2rem 4rem;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        .header {
             position: fixed;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
+            padding: 1.5rem 4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: #ffffff;
+            z-index: 1000;
+            flex-wrap: nowrap;
         }
 
         .logo {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #000000;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-
-        .logo:hover {
-            color: #007AFF;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
             text-decoration: none;
             color: #000000;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #007AFF;
-        }
-
-        .main-container {
-            max-width: 1200px;
-            margin: 140px auto 0;
-            padding: 0 4rem;
-        }
-
-        .main-title {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-            color: #000000;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            text-align: center;
-        }
-
-        .main-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 4rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin-left: auto;
             margin-right: auto;
-            text-align: center;
         }
 
-        .profile-section {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 4rem;
-            align-items: center;
-            background: #ffffff;
-            padding: 4rem;
-            border-radius: 2px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-            margin-bottom: 4rem;
-        }
-
-        .profile-image {
-            width: 240px;
-            height: 240px;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-info {
-            padding-left: 1rem;
-        }
-
-        .profile-name {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #000000;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .profile-title {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .profile-description {
-            color: #444;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .profile-links {
+        .nav {
             display: flex;
-            gap: 1rem;
+            gap: 3rem;
+            margin: 0 auto;
         }
 
-        .profile-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.8rem 2rem;
+        .nav a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button {
             background: #000000;
             color: #ffffff;
+            padding: 0.5rem 1.5rem;
             border-radius: 100px;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            transition: transform 0.3s;
+            margin-left: auto;
         }
 
-        .profile-link:hover {
-            transform: translateY(-2px);
+        .hero {
+            min-height: 100vh;
+            padding: 8rem 4rem 4rem;
         }
 
-        .info-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 4rem;
+        .hero-content {
+            max-width: 800px;
+            padding-top: 4rem;
         }
 
-        .info-box {
-            background: #ffffff;
-            padding: 3rem;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-        }
-
-        .info-box h3 {
-            color: #000000;
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.2;
             margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
             font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 600px;
         }
 
-        .info-list {
-            list-style: none;
+        .news-section {
+            margin-top: 6rem;
         }
 
-        .info-list li {
-            margin-bottom: 1.2rem;
-            padding-left: 1.5rem;
-            position: relative;
+        .news-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .news-item {
+            padding: 2rem;
+            background: #f8f8f8;
+            border-radius: 4px;
+        }
+
+        .news-date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-headline {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .news-excerpt {
+            font-size: 1rem;
             color: #444;
-            font-size: 1.1rem;
+            line-height: 1.5;
         }
 
-        .info-list li::before {
-            content: "—";
+        .scroll-indicator {
+            width: 50px;
+            height: 50px;
+            background: #e75d5d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            right: 4rem;
+            top: 50%;
+            cursor: pointer;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 8rem 4rem;
+        }
+
+        .explore-more {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            text-decoration: none;
             color: #000000;
-            position: absolute;
-            left: 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
-        @media (max-width: 1024px) {
-            .main-container {
-                padding: 0 2rem;
-                margin-top: 120px;
-            }
-
-            .main-title {
-                font-size: 3rem;
-            }
-
-            .profile-section {
-                padding: 3rem;
-                gap: 3rem;
-            }
-
-            .info-section {
-                gap: 2rem;
-            }
+        .explore-more::after {
+            content: "→";
+            font-size: 1.5rem;
         }
 
         @media (max-width: 768px) {
+            .header {
+                padding: 1rem 1.5rem;
+        }
+            
             .nav {
-                padding: 1.5rem 2rem;
-            }
-
-            .logo {
-                font-size: 1rem;
-            }
-
-            .main-title {
+                gap: 1.5rem; 
+        }
+            
+            .hero {
+                padding: 6rem 2rem 2rem;
+        }
+            
+            .hero-title {
                 font-size: 2.5rem;
-            }
-
-            .main-subtitle {
-                font-size: 1.1rem;
-                padding: 0 1rem;
-            }
-
-            .profile-section {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-                padding: 2rem;
-            }
-
-            .profile-image {
-                margin: 0 auto;
-                width: 200px;
-                height: 200px;
-            }
-
-            .profile-links {
-                justify-content: center;
-            }
-
-            .info-section {
-                grid-template-columns: 1fr;
-            }
-
-            .info-box {
-                padding: 2rem;
-            }
         }
-
-        @media (max-width: 480px) {
-            .main-title {
-                font-size: 2rem;
-            }
-
-            .profile-image {
-                width: 160px;
-                height: 160px;
-            }
-
-            .profile-name {
-                font-size: 1.8rem;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-            }
-
-            .nav-links a {
-                font-size: 0.85rem;
-            }
-
-            .profile-link {
-                padding: 0.7rem 1.5rem;
-                font-size: 0.85rem;
-            }
+            .news-grid {
+        grid-template-columns: 1fr;
         }
+    }
+        
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-content">
-            <a href="index.html" class="logo">0</a>
-            <div class="nav-links">
-                <a href="about.html">About</a>
-                <a href="research.html">Research</a>
-                <a href="projects.html">Projects</a>
-                <a href="publications.html">Publications</a>
-                <a href="insights.html">Insights</a>
-                <a href="digging.html">Digging</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <header class="header">
+        <a href="#" class="logo">Dahyun</a>
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#design">Design</a>
+            <a href="#research">Research</a>
+        </nav>
+        <a href="#contact" class="cta-button">Contact</a>
+    </header>
 
-    <main class="main-container">
-        <h1 class="main-title">Human-Computer Interaction</h1>
-        <p class="main-subtitle">
-            현상과 데이터를 중심으로 인사이트를 도출하고<br> 
-            기술과 사람을 잇는 인터랙션을 디자인합니다
-        </p>
-
-        <section class="profile-section">
-            <div class="profile-image">
-                <img src="profile.jpg" alt="Profile Photo">
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title"Bridging People and Technology </h1>
+                <p class="hero-subtitle">"With a foundation in psychology and industrial engineering, I have a deep understanding of the cognitive and emotional aspects of human behavior. My research focuses on HCI/UX, deriving insights from behavioral phenomena and data to study the interactions between people and technology."</p>
             </div>
-            <div class="profile-info">
-                <h2 class="profile-name">Nayoung Kim</h2>
-                <p class="profile-title">HCI Researcher</p>
-                <p class="profile-description">
-                    심리학과 산업공학의 통합적 관점으로 사람에 대한 깊은 이해를 바탕으로 한
-                    혁신적인 인터랙션을 연구합니다.
-                </p>
-                <div class="profile-links">
-                    <a href="https://www.linkedin.com/in/08na26youngkim/" class="profile-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="mailto:[email]" class="profile-link">Contact</a>
+
+            <div class="news-section">
+                <h2 class="news-title">Latest News</h2>
+                <div class="news-grid">
+                    <article class="news-item">
+                        <div class="news-date">October, 2024</div>
+                        <h3 class="news-headline">New Research Paper Published in IROS 2024</h3>
+                        <p class="news-excerpt">Our latest research on delivery robot and InCoPs interaction has been accepted for publication at the HRI 2024 conference.</p>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">September, 2024</div>
+                        <h3 class="news-headline">Join AI Robotics Lab in Sogang University as HRI Researcher</h3>
+                        <p class="news-excerpt">I'm joining the AI Robotics Lab to design interfaces and share insights into human-robot interaction.</p>
+                    </article>
                 </div>
-            </div>
-        </section>
-
-        <section class="info-section">
-            <div class="info-box">
-                <h3>Research Focus</h3>
-                <ul class="info-list">
-                    <li>사람-로봇 인터랙션</li>
-                    <li>사용자 중심 인터랙션</li>
-                    <li>심리학을 기반으로 한 HCI</li>
-                </ul>
-            </div>
-
-            <div class="info-box">
-                <h3>Background</h3>
-                <ul class="info-list">
-                    <li>심리학 - 인간의 인지와 감성에 대한 이해</li>
-                    <li>산업공학 - 시스템 설계와 최적화</li>
-                    <li>HCI - 사용자 중심 인터랙션 디자인</li>
-                </ul>
             </div>
         </section>
     </main>
 
-    <script>
-        gsap.from(".profile-section", {
-            duration: 1,
-            y: 30,
-            opacity: 0,
-            delay: 0.2
-        });
-
-        gsap.from(".info-box", {
-            duration: 1,
-            y: 30,
-            opacity: 0,
-            delay: 0.4,
-            stagger: 0.2
-        });
-    </script>
+    <a href="#" class="explore-more">EXPLORE MORE</a>
 </body>
 </html>
