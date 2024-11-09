@@ -1,5 +1,3 @@
-[이전 코드가 너무 길어서 잘렸습니다. research.html의 전체 코드를 다시 시작하겠습니다]
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,13 +10,13 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Pretendard', sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            overflow-x: hidden;
         }
 
         .nav {
@@ -43,6 +41,14 @@
         .nav-links {
             display: flex;
             gap: 2rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
         }
 
         .nav-links a {
@@ -52,6 +58,7 @@
             padding: 0.5rem 1rem;
             border-radius: 6px;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -71,117 +78,123 @@
         }
 
         .page-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
 
         .page-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.6;
             color: #666;
-            font-size: 1.2rem;
+            margin-bottom: 3rem;
             max-width: 600px;
-            margin: 0 auto;
         }
 
-        .research-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        .research-tabs {
+            display: flex;
+            justify-content: center;
             margin-bottom: 2rem;
         }
 
-        .research-section h2 {
-            color: #007AFF;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+        .research-tabs a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .research-tabs a.active {
+            background-color: #007AFF;
+            color: #fff;
         }
 
         .research-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .research-item {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            transition: transform 0.3s;
+            padding: 1.5rem;
+            background: #f8f8f8;
+            border-radius: 4px;
         }
 
-        .research-item:hover {
-            transform: translateY(-5px);
+        .research-date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
         }
 
-        .research-item h3 {
-            font-size: 1.3rem;
-            color: #333;
+        .research-headline {
+            font-size: 1.2rem;
+            font-weight: 500;
             margin-bottom: 1rem;
         }
 
         .research-description {
-            color: #666;
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.5;
         }
 
-        .tag-list {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
+        @media (min-width: 768px) {
+            .page-header {
+                margin-bottom: 6rem;
+            }
+            
+            .page-title {
+                font-size: 4rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 4rem;
+            }
+            
+            .research-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .research-item {
+                padding: 2rem;
+            }
         }
-
-        .tag {
-            background: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            color: #666;
-        }
-
-        .methodology-section {
-            margin-top: 4rem;
-        }
-
-        .methods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .method-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .method-card h3 {
-            color: #007AFF;
-            margin-bottom: 1rem;
-        }
-
-        .method-list {
-            list-style: none;
-        }
-
-        .method-list li {
-            margin-bottom: 0.5rem;
-            color: #666;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .method-list li::before {
-            content: "•";
-            color: #007AFF;
-        }
-
+        
         @media (max-width: 768px) {
-            .methods-grid {
-                grid-template-columns: 1fr;
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .research-tabs a {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-links a {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.85rem;
+            }
+            
+            .research-tabs a {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -208,85 +221,63 @@
             <p class="page-subtitle">인간과 기술의 상호작용에 대한 연구를 통해 더 나은 경험을 디자인합니다</p>
         </header>
 
-        <section class="research-section">
-            <h2>Current Research</h2>
+        <div class="research-tabs">
+            <a href="#" class="active" data-tab="current">Current Research</a>
+            <a href="#" data-tab="previous">Previous Research</a>
+        </div>
+
+        <section class="research-section" id="current-research">
             <div class="research-grid">
-                <div class="research-item">
-                    <div class="tag-list">
-                        <span class="tag">User Behavior</span>
-                        <span class="tag">Digital Experience</span>
-                        <span class="tag">Interaction Design</span>
-                    </div>
-                    <h3>디지털 환경에서의 사용자 행동 패턴 분석</h3>
-                    <p class="research-description">
-                        디지털 환경에서 사용자들의 행동 패턴을 분석하여 더 나은 인터랙션 디자인을 
-                        위한 인사이트를 도출합니다. 특히 사용자의 인지적, 감성적 측면에 초점을 맞추어 
-                        연구를 진행하고 있습니다.
-                    </p>
-                </div>
-
-                <div class="research-item">
-                    <div class="tag-list">
-                        <span class="tag">UX Research</span>
-                        <span class="tag">Data Analysis</span>
-                        <span class="tag">User Insights</span>
-                    </div>
-                    <h3>데이터 기반 UX 연구 방법론</h3>
-                    <p class="research-description">
-                        정량적, 정성적 데이터를 통합적으로 분석하여 사용자 경험을 개선하는 
-                        연구 방법론을 개발합니다. 행동 데이터와 사용자 피드백을 결합한 
-                        새로운 분석 프레임워크를 제안합니다.
-                    </p>
-                </div>
-
-                <div class="research-item">
-                    <div class="tag-list">
-                        <span class="tag">Cognitive Psychology</span>
-                        <span class="tag">HCI</span>
-                        <span class="tag">Mental Model</span>
-                    </div>
-                    <h3>인지심리학 기반 인터랙션 디자인</h3>
-                    <p class="research-description">
-                        사용자의 인지적 특성과 멘탈 모델을 고려한 인터랙션 디자인 방법을 
-                        연구합니다. 심리학적 이론을 바탕으로 보다 직관적이고 자연스러운 
-                        인터페이스를 설계합니다.
-                    </p>
-                </div>
+                <article class="research-item">
+                    <div class="research-date">October, 2024</div>
+                    <h3 class="research-headline">New Research Paper Published in IROS 2024</h3>
+                    <p class="research-description">Our latest research on delivery robot and InCoPs interaction has been accepted for publication at the HRI 2024 conference.</p>
+                </article>
+                <article class="research-item">
+                    <div class="research-date">September, 2024</div>
+                    <h3 class="research-headline">Join AI Robotics Lab in Sogang University as HRI Researcher</h3>
+                    <p class="research-description">I'm joining the AI Robotics Lab to design interfaces and share insights into human-robot interaction.</p>
+                </article>
             </div>
         </section>
 
-        <section class="research-section methodology-section">
-            <h2>Research Methodology</h2>
-            <div class="methods-grid">
-                <div class="method-card">
-                    <h3>정량적 분석</h3>
-                    <ul class="method-list">
-                        <li>행동 데이터 분석</li>
-                        <li>사용성 메트릭 측정</li>
-                        <li>통계적 검증</li>
-                        <li>패턴 분석</li>
-                    </ul>
-                </div>
-
-                <div class="method-card">
-                    <h3>정성적 분석</h3>
-                    <ul class="method-list">
-                        <li>사용자 인터뷰</li>
-                        <li>관찰 연구</li>
-                        <li>Think Aloud</li>
-                        <li>문맥적 조사</li>
-                    </ul>
-                </div>
-
-                <div class="method-card">
-                    <h3>Mixed Methods</h3>
-                    <ul class="method-list">
-                        <li>데이터 통합 분석</li>
-                        <li>다각화 검증</li>
-                        <li>종단 연구</li>
-                        <li>실험 설계</li>
-                    </ul>
-                </div>
+        <section class="research-section" id="previous-research" style="display: none;">
+            <div class="research-grid">
+                <article class="research-item">
+                    <div class="research-date">July, 2024</div>
+                    <h3 class="research-headline">Publication in CHI 2024 Conference</h3>
+                    <p class="research-description">Our paper on cognitive load in VR interactions has been accepted for publication at the CHI 2024 conference.</p>
+                </article>
+                <article class="research-item">
+                    <div class="research-date">June, 2024</div>
+                    <h3 class="research-headline">Presented at HCII 2024 Conference</h3>
+                    <p class="research-description">I presented our latest research on data-driven UX design at the HCII 2024 conference.</p>
+                </article>
+                <article class="research-item">
+                    <div class="research-date">May, 2024</div>
+                    <h3 class="research-headline">Conducted User Studies for Autonomous Vehicle UX</h3>
+                    <p class="research-description">We conducted a series of user studies to understand the user experience of autonomous vehicles.</p>
+                </article>
+                <article class="research-item">
+                    <div class="research-date">April, 2024</div>
+                    <h3 class="research-headline">Published Research on HRI in Manufacturing</h3>
+                    <p class="research-description">Our research on human-robot interaction in manufacturing environments has been published in a journal.</p>
+                </article>
+                <article class="research-item">
+                    <div class="research-date">March, 2024</div>
+                    <h3 class="research-headline">Presented Cognitive Psychology Research at APA</h3>
+                    <p class="research-description">I presented our findings on the impact of cognitive biases on user interaction at the APA conference.</p>
+                </article>
+                <article class="research-item">
+                    <div class="research-date">February, 2024</div>
+                    <h3 class="research-headline">Awarded Grant for UX Research Project</h3>
+                    <p class="research-description">We received a research grant to study the impact of personalization on user experience.</p>
+                </article>
+                <article class="research-item">
+                    <div class="research-date">January, 2024</div>
+                    <h3 class="research-headline">Joined KIST as HRI Researcher</h3>
+                    <p class="research-description">I joined the AI Robot Center at KIST to focus on human-robot interaction research.</p>
+                </article>
             </div>
         </section>
     </main>
@@ -300,12 +291,23 @@
             delay: 0.2
         });
 
-        gsap.from(".method-card", {
-            duration: 1,
-            y: 30,
-            opacity: 0,
-            stagger: 0.2,
-            delay: 0.4
+        const currentTab = document.querySelector('.research-tabs a[data-tab="current"]');
+        const previousTab = document.querySelector('.research-tabs a[data-tab="previous"]');
+        const currentSection = document.getElementById('current-research');
+        const previousSection = document.getElementById('previous-research');
+
+        currentTab.addEventListener('click', () => {
+            currentTab.classList.add('active');
+            previousTab.classList.remove('active');
+            currentSection.style.display = 'block';
+            previousSection.style.display = 'none';
+        });
+
+        previousTab.addEventListener('click', () => {
+            previousTab.classList.add('active');
+            currentTab.classList.remove('active');
+            previousSection.style.display = 'block';
+            currentSection.style.display = 'none';
         });
     </script>
 </body>
