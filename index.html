@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HRI Research Lab</title>
+    <title>Young's</title>
     <style>
         * {
             margin: 0;
@@ -41,12 +41,21 @@
             font-weight: 700;
             text-decoration: none;
             color: #000000;
-            margin-right: auto;
+            margin-right: 2rem;
+            flex-shrink: 0;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
         }
 
         .nav-links a {
@@ -56,6 +65,7 @@
             padding: 0.5rem 1rem;
             border-radius: 6px;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -72,6 +82,7 @@
             text-transform: uppercase;
             font-size: 0.9rem;
             margin-left: 1rem;
+            flex-shrink: 0;
         }
 
         .hero {
@@ -185,33 +196,6 @@
         }
         
         @media (max-width: 768px) {
-            .nav-content {
-                justify-content: flex-start;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-
-            .nav-content::-webkit-scrollbar {
-                display: none;
-            }
-
-            .nav-links {
-                flex-wrap: nowrap;
-                gap: 1.5rem;
-                margin-left: 1rem;
-            }
-
-            .nav-links a {
-                white-space: nowrap;
-            }
-
-            .cta-button {
-                margin-left: 1rem;
-                margin-right: 1rem;
-            }
-
             .nav-links {
                 gap: 1rem;
             }
