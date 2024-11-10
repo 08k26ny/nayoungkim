@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Human-centered Interaction Research</title>
+    <title>Projects - Nayoung Kim</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Pretendard', sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            overflow-x: hidden;
         }
 
+        /* Navigation */
         .nav {
             width: 100%;
             background: white;
@@ -33,14 +34,30 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000000;
+            margin-right: 2rem;
+            flex-shrink: 0;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
         }
 
         .nav-links a {
@@ -50,6 +67,7 @@
             padding: 0.5rem 1rem;
             border-radius: 6px;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -57,6 +75,14 @@
             color: #007AFF;
         }
 
+        .nav-links .infinity {
+            font-size: 1.4rem;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Main Container */
         .main-container {
             max-width: 1200px;
             margin: 120px auto 0;
@@ -64,155 +90,144 @@
         }
 
         .page-header {
-            text-align: center;
             margin-bottom: 4rem;
+            padding-top: 2rem;
         }
 
         .page-title {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            line-height: 1.2;
             margin-bottom: 1rem;
-            color: #333;
+            font-weight: 700;
+            color: #000000;
         }
 
         .page-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.6;
             color: #666;
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .filter-bar {
-            display: flex;
-            gap: 1rem;
             margin-bottom: 3rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            max-width: 600px;
         }
 
-        .filter-btn {
-            padding: 0.5rem 1.5rem;
-            border: none;
-            background: #f0f0f0;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        .filter-btn.active {
-            background: #007AFF;
-            color: white;
-        }
-
+        /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
         }
 
         .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .project-image {
             width: 100%;
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
+            aspect-ratio: 4/3;
             object-fit: cover;
-            transition: transform 0.3s;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
         }
 
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
+        .project-card:hover .project-image {
+            transform: scale(1.02);
         }
 
-        .project-content {
-            padding: 1.5rem;
+        .project-info {
+            margin-top: 1rem;
         }
 
-        .project-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 0.25rem 0.75rem;
-            background: #f0f0f0;
-            border-radius: 20px;
-            font-size: 0.875rem;
+        .project-category {
+            font-size: 1rem;
             color: #666;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
         }
 
         .project-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: #333;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #000;
         }
 
         .project-description {
-            color: #666;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
         }
 
-        .project-status {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .status-indicator {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
-
-        .status-ongoing {
-            background: #4CAF50;
-        }
-
-        .status-completed {
-            background: #2196F3;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #007AFF;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .page-title {
+                font-size: 4rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1.2rem;
+            }
         }
 
         @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .nav-links .infinity {
+                font-size: 1.2rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .main-container {
+                padding: 1.5rem;
+            }
+
             .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-links a {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.85rem;
+            }
+            
+            .nav-links .infinity {
+                font-size: 1.1rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .project-title {
+                font-size: 1.25rem;
             }
         }
     </style>
@@ -220,14 +235,14 @@
 <body>
     <nav class="nav">
         <div class="nav-content">
+            <a href="index.html" class="logo">0</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="research.html">Research</a>
                 <a href="projects.html">Projects</a>
                 <a href="publications.html">Publications</a>
-                <a href="insights.html">Insights</a>
-                <a href="digging.html">Digging</a>
+                <a href="https://www.notion.so/e91f58981727498d9625591d284634ce?pvs=4" class="infinity" target="_blank">∞</a>
                 <a href="contact.html">Contact</a>
             </div>
         </div>
@@ -239,107 +254,58 @@
             <p class="page-subtitle">Designing better experiences through research on human-computer interactions</p>
         </header>
 
-        <div class="filter-bar">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">UX Research</button>
-            <button class="filter-btn">User Study</button>
-            <button class="filter-btn">Design</button>
-            <button class="filter-btn">Analysis</button>
-        </div>
-
         <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="project1.png" alt="Project 1">
+            <a href="project1.html" class="project-card">
+                <img src="/api/placeholder/800/600" alt="UX Research Framework" class="project-image">
+                <div class="project-info">
+                    <div class="project-category">Robotic User Research</div>
+                    <h2 class="project-title">사용자 행동 분석 프레임워크 개발</h2>
+                    <p class="project-description">디지털 서비스에서의 사용자 행동을 체계적으로 분석하기 위한 프레임워크를 개발하고 실제 서비스에 적용하여 검증했습니다.</p>
                 </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">UX Research</span>
-                        <span class="tag">User Study</span>
-                    </div>
-                    <h3 class="project-title">사용자 행동 분석 프레임워크 개발</h3>
-                    <p class="project-description">
-                        디지털 서비스에서의 사용자 행동을 체계적으로 분석하기 위한 프레임워크를 개발하고 
-                        실제 서비스에 적용하여 검증했습니다.
-                    </p>
-                    <div class="project-status">
-                        <div class="status-indicator status-completed"></div>
-                        <span>완료</span>
-                    </div>
-                    <a href="#" class="project-link">자세히 보기 →</a>
-                </div>
-            </div>
+            </a>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="project2.png" alt="Project 2">
+            <a href="project2.html" class="project-card">
+                <img src="/api/placeholder/800/600" alt="Adaptive Interface" class="project-image">
+                <div class="project-info">
+                    <div class="project-category">Interface Design</div>
+                    <h2 class="project-title">적응형 인터페이스 디자인</h2>
+                    <p class="project-description">사용자의 행동 패턴을 기반으로 자동으로 최적화되는 인터페이스 디자인 방법론을 연구하고 프로토타입을 개발했습니다.</p>
                 </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">Interface Design</span>
-                        <span class="tag">Usability</span>
-                    </div>
-                    <h3 class="project-title">적응형 인터페이스 디자인</h3>
-                    <p class="project-description">
-                        사용자의 행동 패턴을 기반으로 자동으로 최적화되는 인터페이스 디자인 방법론을 
-                        연구하고 프로토타입을 개발했습니다.
-                    </p>
-                    <div class="project-status">
-                        <div class="status-indicator status-ongoing"></div>
-                        <span>진행 중</span>
-                    </div>
-                    <a href="#" class="project-link">자세히 보기 →</a>
-                </div>
-            </div>
+            </a>
 
-            <!-- Additional 10 project cards following the same structure... -->
-            <!-- Projects 3-12 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="project3.png" alt="Project 3">
+            <a href="project3.html" class="project-card">
+                <img src="/api/placeholder/800/600" alt="UX Metrics" class="project-image">
+                <div class="project-info">
+                    <div class="project-category">Data Analysis</div>
+                    <h2 class="project-title">UX 메트릭스 개발</h2>
+                    <p class="project-description">사용자 경험을 정량적으로 측정하기 위한 새로운 메트릭스를 개발하고 실제 서비스에 적용하여 효과성을 검증했습니다.</p>
                 </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">Data Analysis</span>
-                        <span class="tag">UX Metrics</span>
-                    </div>
-                    <h3 class="project-title">UX 메트릭스 개발</h3>
-                    <p class="project-description">
-                        사용자 경험을 정량적으로 측정하기 위한 새로운 메트릭스를 개발하고 
-                        실제 서비스에 적용하여 효과성을 검증했습니다.
-                    </p>
-                    <div class="project-status">
-                        <div class="status-indicator status-completed"></div>
-                        <span>완료</span>
-                    </div>
-                    <a href="#" class="project-link">자세히 보기 →</a>
+            </a>
+
+            <a href="project4.html" class="project-card">
+                <img src="/api/placeholder/800/600" alt="AI Interaction" class="project-image">
+                <div class="project-info">
+                    <div class="project-category">AI Research</div>
+                    <h2 class="project-title">AI 상호작용 연구</h2>
+                    <p class="project-description">인공지능 시스템과 사용자 간의 자연스러운 상호작용을 위한 새로운 인터페이스 패러다임을 연구했습니다.</p>
                 </div>
-            </div>
-
-            <!-- Continue with remaining project cards... -->
-
+            </a>
         </div>
     </main>
 
     <script>
-        // Filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
+        }, {
+            threshold: 0.1
         });
 
-        // Scroll animations
-        gsap.from(".project-card", {
-            duration: 1,
-            y: 30,
-            opacity: 0,
-            stagger: 0.2,
-            delay: 0.2
+        document.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
         });
     </script>
 </body>
