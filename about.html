@@ -73,6 +73,13 @@
             color: #007AFF;
         }
 
+        .nav-links .infinity {
+            font-size: 1.4rem;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+        }
+
         .main-container {
             max-width: 1000px;
             margin: 120px auto 0;
@@ -208,6 +215,20 @@
         }
 
         @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .nav-links .infinity {
+                font-size: 1.2rem;
+                padding: 0.4rem 0.8rem;
+            }
+
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -258,6 +279,20 @@
         }
 
         @media (max-width: 480px) {
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-links a {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.85rem;
+            }
+            
+            .nav-links .infinity {
+                font-size: 1.1rem;
+                padding: 0.3rem 0.6rem;
+            }
+
             .main-container {
                 padding: 1.5rem;
             }
@@ -319,8 +354,7 @@
                 <a href="research.html">Research</a>
                 <a href="projects.html">Projects</a>
                 <a href="publications.html">Publications</a>
-                <a href="insights.html">Insights</a>
-                <a href="digging.html">Digging</a>
+                <a href="https://www.notion.so/e91f58981727498d9625591d284634ce?pvs=4" class="infinity" target="_blank">∞</a>
                 <a href="contact.html">Contact</a>
             </div>
         </div>
