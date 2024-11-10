@@ -16,8 +16,10 @@
             background-color: #ffffff;
             color: #000000;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
+        /* Navigation */
         .nav {
             width: 100%;
             background: white;
@@ -26,6 +28,7 @@
             position: fixed;
             top: 0;
             z-index: 1000;
+            transition: padding 0.3s ease;
         }
 
         .nav-content {
@@ -43,6 +46,7 @@
             color: #000000;
             margin-right: 2rem;
             flex-shrink: 0;
+            transition: font-size 0.3s ease;
         }
 
         .nav-links {
@@ -52,6 +56,7 @@
             -webkit-overflow-scrolling: touch;
             -ms-overflow-style: none;
             scrollbar-width: none;
+            padding-bottom: 5px;
         }
 
         .nav-links::-webkit-scrollbar {
@@ -66,6 +71,7 @@
             border-radius: 6px;
             transition: all 0.3s ease;
             white-space: nowrap;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
@@ -78,23 +84,31 @@
             padding: 0.5rem 1rem;
             display: flex;
             align-items: center;
+            transition: all 0.3s ease;
         }
 
+        /* Main Container */
         .main-container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 120px auto 0;
             padding: 2rem;
+            transition: margin 0.3s ease;
         }
 
+        /* Header Section */
         .page-header {
             text-align: center;
             margin-bottom: 4rem;
+            padding: 0 1rem;
         }
 
         .page-title {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            line-height: 1.2;
             margin-bottom: 1rem;
             color: #000000;
+            font-weight: 700;
+            transition: font-size 0.3s ease;
         }
 
         .page-subtitle {
@@ -102,34 +116,47 @@
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
+            line-height: 1.6;
+            transition: font-size 0.3s ease;
         }
 
+        /* Grid Layout */
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 3rem;
             margin-bottom: 4rem;
+            padding: 0 1rem;
         }
 
         .about-section {
             background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
+            padding: 2.5rem;
+            border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .about-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
 
         .about-section h3 {
             color: #000000;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
         .about-text {
             color: #333;
             margin-bottom: 2.5rem;
             line-height: 1.8;
+            font-size: 1.1rem;
         }
 
+        /* Education & Experience Lists */
         .education-list {
             list-style: none;
             margin-bottom: 2.5rem;
@@ -139,6 +166,7 @@
             margin-bottom: 1.5rem;
             padding-bottom: 1.5rem;
             border-bottom: 1px solid #eee;
+            transition: padding 0.3s ease;
         }
 
         .education-item:last-child {
@@ -151,34 +179,47 @@
             color: #666;
             font-weight: 500;
             margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
 
         .education-degree {
             font-weight: 600;
             margin-bottom: 0.5rem;
+            color: #000;
+            font-size: 1.1rem;
         }
 
         .education-details {
             color: #666;
+            font-size: 0.95rem;
         }
 
+        /* Skills & Interests Section */
         .interests-skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
         .interest-skills-section {
             background: #f8f9fa;
             padding: 2rem;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .interest-skills-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
 
         .interest-skills-section h3 {
             color: #000000;
             font-size: 1.4rem;
             margin-bottom: 1.2rem;
+            font-weight: 600;
         }
 
         .skill-list {
@@ -188,10 +229,12 @@
 
         .skill-list li {
             color: #444;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .skill-list li:before {
@@ -199,14 +242,11 @@
             color: #007AFF;
         }
 
-        @media (max-width: 1024px) {
+        /* Responsive Design */
+        @media (max-width: 1200px) {
             .main-container {
+                max-width: 100%;
                 padding: 2rem;
-                margin-top: 100px;
-            }
-
-            .page-title {
-                font-size: 2.2rem;
             }
 
             .about-grid {
@@ -214,7 +254,21 @@
             }
         }
 
+        @media (max-width: 1024px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .interests-skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
+            .nav {
+                padding: 1rem;
+            }
+            
             .nav-links {
                 gap: 1rem;
             }
@@ -229,9 +283,13 @@
                 padding: 0.4rem 0.8rem;
             }
 
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .main-container {
+                margin-top: 80px;
+                padding: 1.5rem;
+            }
+
+            .page-header {
+                margin-bottom: 3rem;
             }
 
             .page-title {
@@ -240,45 +298,32 @@
 
             .page-subtitle {
                 font-size: 1.1rem;
-                padding: 0 1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .about-section {
                 padding: 1.5rem;
             }
 
-            .about-section h3 {
-                font-size: 1.3rem;
-            }
-
-            .education-item {
-                margin-bottom: 1.2rem;
-                padding-bottom: 1.2rem;
-            }
-
-            .education-degree {
-                font-size: 0.95rem;
-            }
-
-            .education-details {
-                font-size: 0.9rem;
-            }
-
             .interests-skills-container {
                 grid-template-columns: 1fr;
-            }
-
-            .interest-skills-section {
-                padding: 1.5rem;
-            }
-
-            .interest-skills-section h3 {
-                font-size: 1.2rem;
-                margin-bottom: 1rem;
+                gap: 1.5rem;
             }
         }
 
         @media (max-width: 480px) {
+            .nav {
+                padding: 0.8rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+            
             .nav-links {
                 gap: 0.5rem;
             }
@@ -294,11 +339,8 @@
             }
 
             .main-container {
-                padding: 1.5rem;
-            }
-
-            .page-header {
-                margin-bottom: 2rem;
+                margin-top: 70px;
+                padding: 1rem;
             }
 
             .page-title {
@@ -314,28 +356,31 @@
             }
 
             .about-section h3 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
 
             .about-text {
                 font-size: 0.95rem;
-                margin-bottom: 2rem;
             }
 
-            .education-year {
-                font-size: 0.9rem;
+            .education-item {
+                padding: 1rem 0;
             }
 
             .education-degree {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
 
             .education-details {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
+            }
+
+            .interest-skills-section {
+                padding: 1.2rem;
             }
 
             .interest-skills-section h3 {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
             .skill-list li {
