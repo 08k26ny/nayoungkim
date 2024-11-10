@@ -1,3 +1,6 @@
+네 파일 길이가 좀 길어서 메시지가 2개로 분리될 거예요. 첫번째 부분을 먼저 보내드리고, 그 다음 부분을 보내드리겠습니다.
+
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,7 +19,6 @@
             background-color: #ffffff;
             color: #000000;
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
         .nav {
@@ -81,14 +83,24 @@
             align-items: center;
         }
 
-        /* Main Container */
+        .cta-button {
+            background: #000000;
+            color: #ffffff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+            flex-shrink: 0;
+        }
+
         .main-container {
             max-width: 1200px;
             margin: 120px auto 0;
             padding: 2rem;
         }
 
-        /* Header Section */
         .page-header {
             text-align: center;
             margin-bottom: 4rem;
@@ -111,7 +123,6 @@
             line-height: 1.6;
         }
 
-        /* Grid Layout */
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -147,7 +158,6 @@
             font-size: 1.1rem;
         }
 
-        /* Education & Experience Lists */
         .education-list {
             list-style: none;
             margin-bottom: 2.5rem;
@@ -184,7 +194,6 @@
             font-size: 0.95rem;
         }
 
-        /* Skills & Interests Section */
         .interests-skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -232,7 +241,6 @@
             color: #007AFF;
         }
 
-        /* Responsive Design */
         @media (max-width: 1200px) {
             .main-container {
                 max-width: 100%;
@@ -267,6 +275,11 @@
             .nav-links .infinity {
                 font-size: 1.2rem;
                 padding: 0.4rem 0.8rem;
+            }
+            
+            .cta-button {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
             }
 
             .main-container {
@@ -314,6 +327,11 @@
             .nav-links .infinity {
                 font-size: 1.1rem;
                 padding: 0.3rem 0.6rem;
+            }
+            
+            .cta-button {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.75rem;
             }
 
             .main-container {
@@ -368,7 +386,8 @@
     </style>
 </head>
 <body>
-    <nav class="nav">
+```html
+<nav class="nav">
         <div class="nav-content">
             <a href="index.html" class="logo">0</a>
             <div class="nav-links">
@@ -471,3 +490,7 @@
     </main>
 </body>
 </html>
+
+```
+
+이제 index 페이지와 정확히 동일한 네비게이션 스타일이 적용되었습니다. CSS에 `cta-button` 클래스를 추가하고 모든 반응형 스타일도 동일하게 맞췄습니다.
